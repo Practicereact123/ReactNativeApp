@@ -15,6 +15,24 @@ const {username} = route.params.username;
       <Text>Sri Bhashyam Reading Room, located at in Vizianagaram, andhra pradesh, is a located in India. Situated in a bustling area, the store is known for offering a diverse range of products and services to meet the varied needs of its customers. The strategic location in Vizianagaram, a city in the state of andhra pradesh, makes it accessible and convenient for local residents and visitors. Sri Bhashyam Reading Room is committed to providing quality products and excellent customer service, making it a popular shopping destination in the region.</Text>
         <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
        <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
+
+       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
+       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
+
+       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
+       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
+
+       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
+       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
+
+       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
+       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
+
+       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
+       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
+
+       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
+       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
     </ScrollView>
 
     <TouchableOpacity style={styles.footerButton}>
