@@ -1,64 +1,72 @@
 import React from 'react';
-import { View, Text, StyleSheet,ScrollView,TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import dummyData from '../constants/dummyData';
 
-const Welcomescreen = ({ route }) => {
-  
-const {username} = route.params.username;
+const Welcomescreen = ({ route,navigation }) => {
+
+  const { username } = route.params;
+  console.log("usename :: "+{username});
+
+  const handleContinue =() =>{
+   navigation.navigate("FoodItems");  
+  }
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome! {username} </Text>
-      <Text style={styles.text}>About Us</Text>
 
-    <ScrollView style={styles.contentContainer}> 
-      <Text>Information</Text>
+      <View style={styles.header}>
+        <Text style={styles.textWelcome}>Welcome! {username} </Text>
+        <Text style={styles.textAboutUs}>About Us</Text>
+      </View>
 
-      <Text>Sri Bhashyam Reading Room, located at in Vizianagaram, andhra pradesh, is a located in India. Situated in a bustling area, the store is known for offering a diverse range of products and services to meet the varied needs of its customers. The strategic location in Vizianagaram, a city in the state of andhra pradesh, makes it accessible and convenient for local residents and visitors. Sri Bhashyam Reading Room is committed to providing quality products and excellent customer service, making it a popular shopping destination in the region.</Text>
-        <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
-       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
-
-       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
-       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
-
-       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
-       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
-
-       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
-       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
-
-       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
-       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
-
-       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
-       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
-
-       <Text>What type of products does Sri Bhashyam Reading Room offer?</Text>
-       <Text>Sri Bhashyam Reading Room offers a wide range of services to the varied needs of our customers.</Text>
-    </ScrollView>
-
-    <TouchableOpacity style={styles.footerButton}>
-        <Text style={styles.footerButtonText}>Submit</Text>
+      <View style={styles.scrollViewContainer}>
+        <ScrollView contentContainerStyle={styles.contentContainer}>
+         <Text style = {styles.content}>Sri Bhashyam Reading Room, located at in Vizianagaram, andhra pradesh, is a located in India. Situated in a bustling area, the store is known for offering a diverse range of products and services to meet the varied needs of its customers. The strategic location in Vizianagaram, a city in the state of andhra pradesh, makes it accessible and convenient for local residents and visitors. Sri Bhashyam Reading Room is committed to providing quality products and excellent customer service, making it a popular shopping destination in the region.</Text>
+          {dummyData.map((item, index) => (
+            <View key={index}>
+              <Text style={styles.question}>{item.question}</Text>
+              <Text style={styles.answer}>{item.answer}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      </View>
+      <TouchableOpacity style={styles.footerButton} onPress={handleContinue}> 
+        <Text style={styles.footerButtonText}>CONTINUE</Text>
       </TouchableOpacity>
 
     </View>
 
-    
+
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor:'black'
+    backgroundColor: 'black',
+  },
+  header: {
+    paddingVertical: 20,
+    paddingHorizontal: 20,
   },
   contentContainer: {
-    flexGrow: 1,
     paddingHorizontal: 20,
-    paddingTop: 10, // Adjust this value as needed
+    paddingTop: 0, // Adjust this value as needed
+    paddingBottom: 60,
+    width: '100%',
+
+    flexGrow: 1,
+    justifyContent: 'space-between'
   },
-  text: {
+  textWelcome: {
     fontSize: 24,
+    textAlign: 'center',
+    color: 'gold'
+  },
+  textAboutUs: {
+    fontSize: 18,
+    alignContent: 'left',
+    textDecorationLine: 'underline',
+    color:'lightblue'
   },
   footerButton: {
     position: 'absolute',
@@ -73,7 +81,25 @@ const styles = StyleSheet.create({
   },
   footerButtonText: {
     color: '#fff',
+    fontSize: 15,
+  },
+  scrollViewContainer: {
+    height: 530
+  },
+  question: {
     fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    color: 'white',
+    marginTop:20
+  },
+  answer: {
+    fontSize: 16,
+    color: 'white',
+  },
+  content: {
+    fontSize: 16,
+    color: 'white',
   },
 });
 
