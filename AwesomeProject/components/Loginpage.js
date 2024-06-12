@@ -11,7 +11,7 @@ const Loginpage = ({ navigation }) => {
     // Perform login logic (authentication) here
     // For simplicity, let's just navigate to the welcome screen if username and password are not empty
     if (username && password) {
-      console.log("Login successful.");
+      console.log("Login successful.!!!");
       navigation.navigate("Welcomescreen", { username: username });
     }
   };
