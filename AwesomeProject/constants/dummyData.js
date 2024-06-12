@@ -17,7 +17,7 @@ const dummyData = [
     },
     {
       question: "What is the number of seats do each room have?",
-      answer: "It has 75 - 80 seats in each room, providing spacious interior to the students.",
+      answer: "It has 75 - 80 seats in each room, providing spacious interior to the studentss.",
     },
   ];
   
