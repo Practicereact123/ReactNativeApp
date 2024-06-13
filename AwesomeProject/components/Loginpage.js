@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity,Image } from 'react-native';
 import Welcomescreen from './Welcomescreen';
-
+import centrailzedStyles from '../Styling/Styles';
 const Loginpage = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -45,12 +45,12 @@ const Loginpage = ({ navigation }) => {
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
 
-        <View style={styles.footer}>
-          <TouchableOpacity style={styles.footerOption}>
-            <Text style={styles.footerOptionText}>Forgot Password?</Text>
+        <View style={centrailzedStyles.loginFooter}>
+          <TouchableOpacity style={centrailzedStyles.loginFooterOption}>
+            <Text style={centrailzedStyles.loginFooterOptionText}>Forgot Password?</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.footerOption}>
-            <Text style={styles.footerOptionText}>Sign Up</Text>
+          <TouchableOpacity style={centrailzedStyles.loginFooterOption}>
+            <Text style={centrailzedStyles.loginFooterOptionText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
 

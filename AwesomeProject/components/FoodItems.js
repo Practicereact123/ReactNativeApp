@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView, Image, Text, Button, TouchableOpacity } from 'react-native';
-
+import centrailzedStyles from '../Styling/Styles';
 
 function FoodItems() {
     const foodItemsList = [
@@ -40,36 +40,46 @@ function FoodItems() {
         <View style={styles.container}>
 
             <View style={styles.scrollViewContainer}>
-            <ScrollView showsVerticalScrollIndicator={true} >
+                <ScrollView showsVerticalScrollIndicator={true} >
 
-            
-                {foodItemsList.map((item, index) => (
-                    <View key={index} style={styles.itemContainer}>
-                        <Image
-                            style={styles.image}
-                            source={{ uri: item.imgURL }}
 
-                        />
-                        <View style={styles.detailsContainer}>
-                            <Text style={styles.name}>{item.name}</Text>
-                            <Text style={styles.price}>Price: ${item.price}</Text>
-                            <Text style={styles.description}>{item.description}</Text>
-                            <TouchableOpacity style={styles.addToCartContainer}>
-                    <Text style={styles.addToCart}>Add to Cart</Text>
-                </TouchableOpacity>
+                    {foodItemsList.map((item, index) => (
+                        <View key={index} style={styles.itemContainer}>
+                            <Image
+                                style={styles.image}
+                                source={{ uri: item.imgURL }}
 
+                            />
+                            <View style={styles.detailsContainer}>
+                                <Text style={styles.name}>{item.name}</Text>
+                                <Text style={styles.price}>Price: ${item.price}</Text>
+                                <Text style={styles.description}>{item.description}</Text>
+                                <View style = {styles.cartContainer}> 
+                                    <TouchableOpacity style={centrailzedStyles.foodPlusminus}>
+                                        <Text style={styles.addToCart}>+</Text>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={styles.addToCartContainer}>
+                                        <Text style={styles.addToCart}>Add to Cart</Text>
+                                        
+                                    </TouchableOpacity>
+                                    <TouchableOpacity style={centrailzedStyles.foodPlusminus}>
+                                            <Text style={styles.addToCart}>-</Text>
+                                        </TouchableOpacity>
+                                </View>
+
+
+                            </View>
                         </View>
-                    </View>
-                ))}
-            </ScrollView>
+                    ))}
+                </ScrollView>
 
             </View>
+
             
-            <View style = {styles.bottomContainer}> 
-                <TouchableOpacity style={styles.buttonContainer}>
-                    <Text style={styles.buttonText}>Proceed</Text>
+                <TouchableOpacity style={centrailzedStyles.loginButton}>
+                    <Text style={centrailzedStyles.loginButtonText}>Proceed</Text>
                 </TouchableOpacity>
-            </View>
+            
 
         </View>
     );
@@ -80,8 +90,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    scrollViewContainer:{
-    height:660
+    scrollViewContainer: {
+        height: 660
     },
     itemContainer: {
         flexDirection: 'row',
@@ -112,10 +122,10 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 14,
         color: 'black',
-        marginBottom:15
+        marginBottom: 15
     },
     addToCart: {
-        fontSize: 14,
+        fontSize: 12,
         color: 'black',
 
     },
@@ -124,26 +134,31 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
         alignItems: 'center',
-        width:'100%',
-        height:'100%'
+        width: '100%',
+        height: '100%'
     },
     buttonText: {
         color: '#fff',
         fontSize: 16,
     },
-    bottomContainer:{
-      position:'absolute',
-      bottom:10,
-      alignItems:'center',
-      marginLeft:50,
-      width:'70%'
-    
+    bottomContainer: {
+        position: 'absolute',
+        bottom: 10,
+        alignItems: 'center',
+        marginLeft: 50,
+        width: '70%'
+
     },
-    addToCartContainer:{
+    addToCartContainer: {
         backgroundColor: 'orange', // Customize your button color
         padding: 10,
         borderRadius: 5,
         alignItems: 'center',
+    },
+    cartContainer:{
+        flexDirection:'row',
+        alignContent:'center'
+        
     }
 });
 

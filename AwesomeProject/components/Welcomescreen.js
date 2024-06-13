@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import dummyData from '../constants/dummyData';
-
+import centrailzedStyles from '../Styling/Styles';
 const Welcomescreen = ({ route,navigation }) => {
 
   const { username } = route.params;
@@ -29,9 +29,12 @@ const Welcomescreen = ({ route,navigation }) => {
           ))}
         </ScrollView>
       </View>
-      <TouchableOpacity style={styles.footerButton} onPress={handleContinue}> 
-        <Text style={styles.footerButtonText}>CONTINUE</Text>
+      
+      <TouchableOpacity style={centrailzedStyles.loginButton} onPress={handleContinue}> 
+        <Text style={centrailzedStyles.loginButtonText}>CONTINUE</Text>
       </TouchableOpacity>
+      
+      
 
     </View>
 
